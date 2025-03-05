@@ -1,4 +1,5 @@
 <div id="<%= dom_id category %>" class="w-full sm:w-auto my-5 space-y-5">
+  
   <div>
     <strong class="block font-medium mb-1">Name:</strong>
     <%= category.name %>
@@ -7,8 +8,10 @@
     <strong class="block font-medium mb-1">Description:</strong>
     <%= category.description %>
   </div>
+
   <% if action_name != "show" %>
    <%= link_to "Show", [:admin, category], class: "rounde-lg" %> 
    <%= link_to "Edit", edit_admin_category_path(category), class: "rounded-lg" %>
   <% end %>
+
 </div>
