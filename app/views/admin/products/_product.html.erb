@@ -1,0 +1,36 @@
+<div id="<%= dom_id product %>" class="w-full sm:w-auto my-5 space-y-5">
+ 
+   <div>
+    <strong class="block font-medium mb-1">Product Image:</strong>
+    <%= image_tag(product.image, class: 'w-64') if product.image.attached? %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= product.name %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= product.description %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Price:</strong>
+    <%= product.price %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Category:</strong>
+    <%= product.category_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Active:</strong>
+    <%= product.active? ? "Yes" : "No" %>
+  </div>
+
+  <% if action_name != "show" %>
+   <div class="sm:inline-block">
+     <%= link_to "Show this category", [:admin, product], class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 inline-block font-medium" %> 
+     <%= link_to "Edit this category", edit_admin_product_path(product), class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-gray-600 hover:bg-gray-500 inline-block font-medium" %>
+     <%= button_to "Destroy this category", admin_products_path, method: :delete, class: "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
+   </div>
+  <% end %>
+
+</div>
