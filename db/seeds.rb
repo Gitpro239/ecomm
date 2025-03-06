@@ -16,3 +16,9 @@
 # (1..10).each do |i|
 # Category.create!(name: "Category #{i}", description: "test")
 # end
+
+
+
+# <%= image_tag(@post.cover_art, class: 'w-60 h-60 object-cover') if @post.cover_art.attached? %>
+# <%= image_tag(category.image, class: 'w-16') if category.image.attached? %>
+# <%= category.image.present? ? image_tag(category.image.variant(:thumb), class: 'w-60 h-60 object-cover') :image_tag("https://via.placeholder.com/50") %>

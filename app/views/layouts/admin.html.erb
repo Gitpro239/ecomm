@@ -23,8 +23,8 @@
   </head>
 
   <body>
-    <main class="mx-auto mt-0 px-0 flex">
-        <nav class="flex w-full">
+    <main class="mx-auto mt-0 px-0 flex ">
+        <nav class="flex w-50">
             <div class="h-screen bg-gray-600 sticky top-0">
                 <div class="flex">
                     <%= image_tag 'logo.png', class: 'w-16' %>
@@ -58,7 +58,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="mt-6 px-2 py-2 w-full p-8">
+        <div class="px-4 py-2 ps-8 w-full p-8">
            <%= yield %>
         </div>
     </main>
