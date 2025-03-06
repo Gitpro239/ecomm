@@ -31,3 +31,53 @@
 #     <% end %>
 #   </div>
 # </div>
+
+# <div>
+#   <strong class="block font-medium mb-1">Product Image:</strong>
+#   <%= image_tag(product.images, class: 'w-64') if product.images.any.attached? %>
+# </div>
+
+# <div class="my-5">
+# <%= form.label :images %>
+# <%= form.file_field :images, multiple: true, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:description].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:description].any?}] %>
+# </div>
+
+# <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+# <%= image_tag(product.image, class: 'w-16') if product.image.attached? %>
+# <td>
+
+
+# <div class="my-5">
+#     <% if @admin_product.images.attached? %>
+#      <% @admin_product.images.each do |image|%>
+#      <%= image_tag image, class: 'w-64' %>
+#       <% end %>
+#     <% else %>
+#      <p>No images uploaded.</p>
+#   <% end %>
+# </div>
+
+# <div>
+# <% if @admin_product.images.attached? %>
+#   <% @admin_product.images.each do |image| %>
+#   <%= image_tag image, size: "200x200" %>
+# <% end %>
+# <% else %>
+#  <p>No images uploaded.</p>
+# <% end %>
+# </div>
+
+# <div class="my-5">
+# <%= form.label :images %>
+# <%= form.file_field :images, multiple: true, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:description].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:description].any?}] %>
+# </div>
+
+# <div class="my-5">
+#     <% if admin_product.images.any? %>
+#      <% admin_product.images.each do |image|%>
+#      <%= image_tag image, class: "w-16" %>
+#       <% end %>
+#     <% end %>
+#     <%= form.label :images %>
+#     <%= form.file_field :images, multiple: true, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:description].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:description].any?}] %>
+# </div>

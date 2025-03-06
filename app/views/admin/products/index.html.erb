@@ -45,7 +45,11 @@
                         <tr class="bg-gray-50 border-b">
 
                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                             <%= image_tag(product.image, class: 'w-16') if product.image.attached? %>
+                           <% if product.images.attached? %>
+                             <% product.images.each do |image| %>
+                             <%= image_tag image, size: "60x60" %>
+                            <% end %>
+                           <% end %>
                           <td>
 
                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
@@ -57,7 +61,7 @@
                           <td>
                             
                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                            <%= product.price %>
+                            $<%= (product.price/100.0).to_s %>
                           <td>
 
                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">

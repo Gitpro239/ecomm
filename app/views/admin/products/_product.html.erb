@@ -1,8 +1,14 @@
 <div id="<%= dom_id product %>" class="w-full sm:w-auto my-5 space-y-5">
  
-   <div>
-    <strong class="block font-medium mb-1">Product Image:</strong>
-    <%= image_tag(product.image, class: 'w-64') if product.image.attached? %>
+
+  <div class="my-5">
+    <% if @admin_product.images.attached? %>
+     <% @admin_product.images.each do |image|%>
+     <%= image_tag image, class: 'w-64' %>
+      <% end %>
+    <% else %>
+     <p>No images uploaded.</p>
+  <% end %>
   </div>
   <div>
     <strong class="block font-medium mb-1">Name:</strong>
