@@ -1,41 +1,37 @@
-
-<% content_for :title, "Products" %>
+<% content_for :title, "Orders" %>
 
 <div class="w-full">
-
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Products</h1>
-    <%= link_to "New product", new_admin_product_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl">Orders</h1>
+    <%= link_to "New order", new_admin_order_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
   </div>
 
-  <div id="admin_products" class="min-w-full divide-y divide-gray-200 space-y-5">
-    <% if @admin_products.any? %>
-              <div class="flex flex-col sm:flex-row justify-between items-center pb-5 sm:pb-0">   
-                   <table class="table-auto w-full">
+  <div id="admin_orders" class="min-w-full divide-y divide-gray-200 space-y-5">
+    <% if @admin_orders.any? %>
+             <div class="flex flex-col sm:flex-row justify-between items-center pb-5 sm:pb-0">   
+                 <table class="table-auto w-full">
                     <thead >
                       <tr>
                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                          Product Image
+                         Product Image
                         </th>
                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                          Name
+                         Customer Email
                         </th>
                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                          Description
+                          Fulfilled
                         </th>
                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                          Price
+                          Address
                         </th>
                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                          Category
+                          Total
                         </th>
-                        <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                          Active
-                        </th>
+
                         <th colspan="3" scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
                           Action
                         </th>
@@ -43,44 +39,40 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <% @admin_products.each do |product| %>
+                      <% @admin_orders.each do |order| %>
 
                         <tr class="bg-gray-50 border-b">
 
                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                            <% if product.images.attached? %>
-                             <% product.images.each do |image| %>
+                            <% if order.images.attached? %>
+                             <% order.images.each do |image| %>
                              <%= image_tag image, size: "60x60" %>
                              <% end %>
                             <% end %>
                           <td>
 
                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                             <%= link_to product.name, edit_admin_category_path(product) %>
+                             <%= link_to order.customer_email, edit_admin_order_path(order) %>
                           <td>
                  
                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                            <%= product.description %>
+                            <%= order.fulfilled %>
+                          <td>
+
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                            <%= order.address %>
                           <td>
                             
                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                            $<%= (product.price/100.0).to_s %>
-                          <td>
-
-                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                            <%= product.category.name %>
-                          <td>
-                            
-                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                            <%= product.active %>
+                            <%= order.total %>
                           <td>
 
                           <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-800">
-                            <%= link_to "Show", [:admin, product], class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 inline-block font-medium" %> 
+                            <%= link_to "Show", [:admin, order], class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 inline-block font-medium" %> 
                           <td>
 
                           <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-800">
-                            <%= link_to "Edit", edit_admin_product_path(product), class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-gray-600 hover:bg-gray-500 inline-block font-medium" %>
+                            <%= link_to "Edit", edit_admin_order_path(order), class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-gray-600 hover:bg-gray-500 inline-block font-medium" %>
                           <td>
 
                         </tr>
@@ -88,13 +80,7 @@
                     </tbody>
                    </table>    
                </div>
-          </div>
-     <% else %>
-      <p class="text-center my-10">No Products found.</p>
-    <% end %>
-  </div>
+           <% else %>
+         <p class="text-center my-10">No Orders found.</p>
+      <% end %>
  </div>
-
-</div>
-
-

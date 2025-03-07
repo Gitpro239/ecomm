@@ -38,17 +38,17 @@ class Admin::ProductsController < AdminController
 
   # PATCH/PUT /admin/products/1 or /admin/products/1.json
   def update
-     @admin_product = Product.find(params[:id])
-     if @admin_product.update(admin_product_params.reject { |k| k["images"] })
+    @admin_product = Product.find(params[:id])
+    if @admin_product.update(admin_product_params.reject { |k| k["images"] })
        if admin_product_params["images"]
            admin_product_params["images"].each do |image|
              @admin_product.images.attach(image)
            end
        end
        redirect_to admin_product_url(@admin_product), notice: "Product was successfully updated."
-     else
+    else
       render :edit, status: :unprocessable_entity
-     end
+    end
   end
 
   # def update

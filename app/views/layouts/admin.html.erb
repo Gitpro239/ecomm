@@ -37,24 +37,35 @@
                         Dashboard</span>
                     <% end %>
                   </li>
-                    <li>
+
+                  <li>
                     <%= link_to admin_products_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
                      <%= icon('fa-solid', 'cart-shopping', class: 'mr-2') %><span class="hidden md:inline-block">
                         Product</span>
                     <% end %>
                   </li>
-                    <li>
+
+                  <li>
                     <%= link_to admin_categories_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
                      <%= icon('fa-solid', 'list', class: 'mr-2') %><span class="hidden md:inline-block">
                         Categories</span>
                     <% end %>
                   </li>
-                    <li>
-                    <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+
+                   <li>
+                    <%= link_to admin_stocks_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                     <%= icon('fa-solid', 'clipboard-list', class: 'mr-2') %><span class="hidden md:inline-block">
+                        Stocks</span>
+                    <% end %>
+                  </li>
+
+                  <li>
+                    <%= link_to admin_orders_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
                      <%= icon('fa-solid', 'truck-fast', class: 'mr-2') %><span class="hidden md:inline-block">
                         Orders</span>
                     <% end %>
                   </li>
+
                 </ul>
             </div>
         </nav>

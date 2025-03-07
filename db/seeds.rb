@@ -17,6 +17,9 @@
 # Category.create!(name: "Category #{i}", description: "test")
 # end
 
+# (1..10).each do |i|
+# Order.create!(customer_email: "test#{i}@example.com", total: 1000, address: "123 RoR Road")
+# end
 
 
 # <%= image_tag(@post.cover_art, class: 'w-60 h-60 object-cover') if @post.cover_art.attached? %>
