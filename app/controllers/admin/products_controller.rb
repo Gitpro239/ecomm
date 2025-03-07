@@ -13,7 +13,7 @@ class Admin::ProductsController < AdminController
   # GET /admin/products/new
   def new
     @admin_product = Product.new
-    @admin_categories = Category.all
+    # @admin_categories = Category.all
   end
 
   # GET /admin/products/1/edit
@@ -29,7 +29,7 @@ class Admin::ProductsController < AdminController
         format.html { redirect_to admin_product_url(@admin_product), notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @admin_product }
       else
-        @admin_categories = Category.all
+        # @admin_categories = Category.all
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @admin_product.errors, status: :unprocessable_entity }
       end
@@ -43,7 +43,7 @@ class Admin::ProductsController < AdminController
         format.html { redirect_to admin_product_url(@admin_product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @admin_product }
       else
-        @admin_categories = Category.all
+        # @admin_categories = Category.all
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @admin_product.errors, status: :unprocessable_entity }
       end

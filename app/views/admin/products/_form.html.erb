@@ -32,7 +32,7 @@
     <%# <%= form.collection_select(:category_id, @admin_categories, :id, :name) %> 
   </div>
 
-   <div class="my-5">
+  <div class="my-5">
     <% if admin_product.images.any? %>
      <% admin_product.images.each do |image|%>
      <%= image_tag image, class: "w-16" %>

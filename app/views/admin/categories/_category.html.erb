@@ -4,10 +4,12 @@
     <strong class="block font-medium mb-1">Product Image:</strong>
     <%= image_tag(category.image, class: 'w-64') if category.image.attached? %>
   </div>
+
   <div>
     <strong class="block font-medium mb-1">Name:</strong>
     <%= category.name %>
   </div>
+  
   <div>
     <strong class="block font-medium mb-1">Description:</strong>
     <%= category.description %>
