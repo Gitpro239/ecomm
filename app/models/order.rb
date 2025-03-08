@@ -1,3 +1,3 @@
 class Order < ApplicationRecord
-  has_one_attached :images
+  has_many :order_products
 end

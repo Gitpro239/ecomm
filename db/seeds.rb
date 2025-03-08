@@ -21,6 +21,7 @@
 # Order.create!(customer_email: "test#{i}@example.com", total: 1000, address: "123 RoR Road")
 # end
 
+# order.order_products.create(product_id: 2, size: "M", quantity: 1)
 
 # <%= image_tag(@post.cover_art, class: 'w-60 h-60 object-cover') if @post.cover_art.attached? %>
 # <%= image_tag(category.image, class: 'w-16') if category.image.attached? %>
