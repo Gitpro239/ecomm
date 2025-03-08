@@ -81,3 +81,104 @@
 #     <%= form.label :images %>
 #     <%= form.file_field :images, multiple: true, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_product.errors[:description].none?, "border-red-400 focus:outline-red-600": admin_product.errors[:description].any?}] %>
 # </div>
+
+
+# <% content_for :title, "Orders" %>
+
+# <div class="w-full">
+#   <% if notice.present? %>
+#     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
+#   <% end %>
+
+#   <div class="flex justify-between items-center">
+#     <h1 class="font-bold text-4xl">Orders</h1>
+#     <%= link_to "New order", new_admin_order_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+#   </div>
+
+#   <div id="admin_orders" class="min-w-full divide-y divide-gray-200 space-y-5">
+#     <% if @admin_orders.any? %>
+#              <div class="flex flex-col sm  :flex-row justify-between items-center pb-5 sm:pb-0">
+#                  <table class="table-auto w-full">
+#                     <thead >
+#                       <tr>
+
+#                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+#                          Product Image
+#                         </th>
+
+#                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+#                          Order ID
+#                         </th>
+
+#                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+#                          Customer Email
+#                         </th>
+
+#                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+#                           Fulfilled
+#                         </th>
+
+#                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+#                           Address
+#                         </th>
+
+#                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+#                           Total
+#                         </th>
+
+#                         <th colspan="3" scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+#                           Action
+#                         </th>
+
+#                       </tr>
+#                     </thead>
+#                     <tbody>
+#                       <% @admin_orders.each do |order| %>
+
+#                         <tr class="bg-gray-50 border-b">
+
+#                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+#                             <% if order.images.attached? %>
+#                              <% order.images.each do |image| %>
+#                              <%= image_tag image, size: "60x60" %>
+#                              <% end %>
+#                             <% end %>
+#                           <td>
+
+#                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+#                             <%= link_to order.id, [:admin, order], class: "underline" %>
+#                           <td>
+
+#                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+#                              <%= link_to order.customer_email, edit_admin_order_path(order) %>
+#                           <td>
+
+#                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+#                             <%= order.fulfilled %>
+#                           <td>
+
+#                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+#                             <%= order.address %>
+#                           <td>
+
+#                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+#                             <%= order.total %>
+#                           <td>
+
+#                           <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-800">
+#                             <%= link_to "Show", [:admin, order], class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 inline-block font-medium" %>
+#                           <td>
+
+#                           <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-800">
+#                             <%= link_to "Edit", edit_admin_order_path(order), class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-gray-600 hover:bg-gray-500 inline-block font-medium" %>
+#                           <td>
+
+#                         </tr>
+#                       <% end %>
+#                     </tbody>
+#                    </table>
+#                </div>
+#            <% else %>
+#          <p class="text-center my-10">No Orders found.</p>
+#       <% end %>
+#  </div>

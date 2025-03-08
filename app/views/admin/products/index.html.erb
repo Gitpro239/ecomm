@@ -15,8 +15,8 @@
   <div id="admin_products" class="min-w-full divide-y divide-gray-200 space-y-5">
     <% if @admin_products.any? %>
               <div class="flex flex-col sm:flex-row justify-between items-center pb-5 sm:pb-0">   
-                   <table class="table-auto w-full">
-                    <thead >
+                   <table class="bg-gray-50 border-b w-full">
+                    <thead class="text-center">
                       <tr>
                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
                           Product Image
@@ -33,19 +33,17 @@
                         <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
                           Category
                         </th>
-                        <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                          Active
-                        </th>
-                        <th colspan="3" scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                       
+                        <th colspan="3">
                           Action
                         </th>
                         
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                       <% @admin_products.each do |product| %>
 
-                        <tr class="bg-gray-50 border-b">
+                        <tr>
 
                           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
                             <% if product.images.attached? %>
