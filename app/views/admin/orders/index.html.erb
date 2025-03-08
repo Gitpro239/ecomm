@@ -21,13 +21,13 @@
 
         <tr>
 
-          <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">ID</th>
-          <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">Customer Email</th>
-          <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">Fulfilled</th>
-          <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">Address</th>
-          <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">Total</th>
-          <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">Order Time</th>
-          <th colspan="3">Action</th>
+          <th scope="col" class="text-sm font-bold text-gray-800 px-6 py-4 text-left">ID</th>
+          <th scope="col" class="text-sm font-bold text-gray-800 px-6 py-4 text-left">Customer Email</th>
+          <th scope="col" class="text-sm font-bold text-gray-800 px-6 py-4 text-left">Fulfilled</th>
+          <th scope="col" class="text-sm font-bold text-gray-800 px-6 py-4 text-left">Address</th>
+          <th scope="col" class="text-sm font-bold text-gray-800 px-6 py-4 text-left">Total</th>
+          <th scope="col" class="text-sm font-bold text-gray-800 px-6 py-4 text-left">Order Time</th>
+          <th colspan="3" class="text-sm font-bold text-gray-800">Action</th>
 
         </tr>
 
@@ -36,7 +36,7 @@
         <% @admin_orders.each do |order|%>
          <tr class="bg-gray-50 border-b">
 
-           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800"> <%= order.id %> </td>
+           <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800"> <%= link_to order.id, [:admin, order], class: "underline"  %> </td>
            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800"> <%= order.customer_email %> </td>
            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800"> <%= order.fulfilled %> </td>
            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800"> <%= order.address %> </td>
