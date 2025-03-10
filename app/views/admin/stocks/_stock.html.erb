@@ -13,3 +13,10 @@
   </div>
 </div>
 
+ <% if action_name != "show" %>
+   <div class="sm:inline-block">
+     <%= link_to "Show this category", [:admin, stock.product, stock], class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 inline-block font-medium" %> 
+     <%= link_to "Edit this category", edit_admin_product_stock_path(stock.product, stock), class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-gray-600 hover:bg-gray-500 inline-block font-medium" %>
+     <%= button_to "Destroy this category", admin_product_stocks_path, method: :delete, class: "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
+   </div>
+  <% end %>

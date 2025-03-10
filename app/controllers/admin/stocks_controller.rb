@@ -3,8 +3,8 @@ class Admin::StocksController < AdminController
 
   # GET /admin/stocks or /admin/stocks.json
   def index
-    @admin_stocks = Stock.all
-    # @admin_stocks = Stock.where(product_id: params[:product_id])
+    # @admin_stocks = Stock.all
+    @admin_stocks = Stock.where(product_id: params[:product_id])
   end
 
   # GET /admin/stocks/1 or /admin/stocks/1.json
@@ -13,26 +13,24 @@ class Admin::StocksController < AdminController
 
   # GET /admin/stocks/new
   def new
-    # product_id = self.id
-    # @product = Product.find_by(params[:product_id])
+    @product = Product.find(params[:product_id])
     @admin_stock = Stock.new
   end
-
   # GET /admin/stocks/1/edit
   def edit
     # @product = Product.find_by(params[:product_id])
-    # @admin_stock = Stock.find(params.expect(:id))
+    @admin_stock = Stock.find(params.expect(:id))
   end
 
   # POST /admin/stocks or /admin/stocks.json
   def create
-    # @product = Product.find_by(params[:product_id])
-    # @product = Product.find(params[:product_id])
+    @product = Product.find(params[:product_id])
+    @admin_stock = @product.stocks.new(admin_stock_params)
     @admin_stock = Stock.new(admin_stock_params)
 
     respond_to do |format|
       if @admin_stock.save
-        format.html { redirect_to admin_stock_path(@admin_stock), notice: "Stock was successfully created." }
+        format.html { redirect_to admin_product_stock_url(@product, @admin_stock), notice: "Stock was successfully created." }
         format.json { render :show, status: :created, location: @admin_stock }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,7 +43,7 @@ class Admin::StocksController < AdminController
   def update
     respond_to do |format|
       if @admin_stock.update(admin_stock_params)
-        format.html { redirect_to admin_stock_path(@admin_stock), notice: "Stock was successfully updated." }
+        format.html { redirect_to admin_product_stock_url(@admin_stock.product, @admin_stock), notice: "Stock was successfully updated." }
         format.json { render :show, status: :ok, location: @admin_stock }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,7 +57,7 @@ class Admin::StocksController < AdminController
     @admin_stock.destroy!
 
     respond_to do |format|
-      format.html { redirect_to admin_stocks_path, status: :see_other, notice: "Stock was successfully destroyed." }
+      format.html { redirect_to admin_product_stocks_url, status: :see_other, notice: "Stock was successfully destroyed." }
       format.json { head :no_content }
     end
   end
