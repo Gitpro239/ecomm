@@ -9,9 +9,9 @@
 
   <%= render @admin_stock %>
 
-  <%# <%= link_to "Edit this stock", edit_admin_stock_path(@admin_stock), class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-gray-600 hover:bg-gray-500 inline-block font-medium" %> %>
-  <%= link_to "Back to stocks", admin_product_stocks_path, class: "w-full sm:w-auto text-center text-white mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 inline-block font-medium" %>
-  <div class="sm:inline-block mt-2 sm:mt-0 sm:ml-2">
-    <%# <%= button_to "Destroy this stock", admin_stocks_path, method: :delete, class: "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %> %>
-  </div>
+    <%= link_to "Back to stocks", admin_product_stocks_path, class: "w-full sm:w-auto text-center text-white mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 inline-block font-medium" %>
+    <%= link_to "Edit this category", edit_admin_product_stock_path, class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-gray-600 hover:bg-gray-500 inline-block font-medium" %>
+    <div class="sm:inline-block mt-2 sm:mt-0 sm:ml-2">
+     <%= button_to "Destroy this stock", admin_product_stocks_path, method: :delete, class: "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
+    </div>
 </div>

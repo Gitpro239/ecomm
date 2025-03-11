@@ -186,3 +186,59 @@
 #          <p class="text-center my-10">No Orders found.</p>
 #       <% end %>
 #  </div>
+
+
+
+# <% content_for :title, "Stocks" %>
+
+# <div class="w-full">
+#   <% if notice.present? %>
+#     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
+#   <% end %>
+
+#    <%# <div class="flex justify-between items-center">
+#     <h1 class="font-bold text-4xl">Stocks</h1>
+#     <%= link_to "New stock", new_admin_stock_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+#    <%# </div>  %>
+
+#    <div class="flex justify-between items-center">
+#     <h1 class="font-bold text-4xl">Stocks</h1>
+#     <%= link_to "New stock", new_admin_product_stock_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+#    </div>
+
+# <div id="admin_stocks" class="min-w-full divide-y divide-gray-200 space-y-5">
+#  <div class="flex flex-col w-full py-4 p-6">
+#     <div class="overflow-x-auto rounded">
+#       <table class="min-w-full bg-gray-300" style="border-collapse: separate; border-spacing: 0;">
+#           <thead class="text-center">
+#             <tr>
+#                 <th class="px-6 py-4 border-b-2 border-gray-200 bg-gray-300">Stock ID</th>
+#                 <th class="px-6 py-4 border-b-2 border-gray-200 bg-gray-300">Size</th>
+#                 <th class="px-6 py-4 border-b-2 border-gray-200 bg-gray-300">Amount</th>
+#                 <th class="px-6 py-4 border-b-2 border-gray-200 bg-gray-300">Product</th>
+#                 <th colspan="3" class="px-6 py-4 border-b-2 border-gray-200 bg-gray-300">Action</th>
+#             </tr>
+#           </thead>
+#           <tbody class="text-dark-500 text-center">
+#             <% if @admin_stocks.any? %>
+#              <% @admin_stocks.each do |admin_stock| %>
+#                 <tr>
+#                   <td class="px-6 py-4 border-b border-gray-200"><%= admin_stock.id %></td>
+#                   <td class="px-6 py-4 border-b border-gray-200"><%= admin_stock.size %></td>
+#                   <td class="px-6 py-4 border-b border-gray-200"><%= admin_stock.amount %></td>
+#                   <td class="px-6 py-4 border-b border-gray-200"><%= admin_stock.product.name %></td>
+#                   <%# <td> <%= link_to "Show", [:admin, admin_product_stock], class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 inline-block font-medium" %> </td> %>
+#                   <%# <td> <%= link_to "Show", admin_product_stock_path, class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 inline-block font-medium" %> </td> %>
+#                   <%# <td> <%= link_to "Edit", edit_admin_product_stock_path(admin_stock), class: "w-full sm:w-auto text-center text-white rounded-md px-3.5 py-2.5 bg-gray-600 hover:bg-gray-500 inline-block font-medium" %> </td> %>
+#                   <td> <%= button_to "Destroy", admin_product_stocks_path, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer" %> </td>
+#                 </tr>
+#                <% end %>
+#              <% else %>
+#                 <p class="text-center my-10">No stocks found.</p>
+
+#              <% end %>
+#           </tbody>
+#       </table>
+#     </div>
+#   </div>
+# </div>

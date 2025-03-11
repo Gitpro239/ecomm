@@ -31,6 +31,14 @@
                     <h1 class="text-md w-32 py-2 text-gray-50 font-bold hidden md:block">Ecomm Admin</h1>
                 </div>
                 <ul class="flex flex-col text-gray-50">
+                  
+                  <li>
+                    <%= link_to root_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                     <%= icon('fa-solid', 'house', class: 'mr-2') %><span class="hidden md:inline-block">
+                        HomePage</span>
+                    <% end %>
+                  </li>
+
                   <li>
                     <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
                      <%= icon('fa-solid', 'gauge-high', class: 'mr-2') %><span class="hidden md:inline-block">
@@ -49,13 +57,6 @@
                     <%= link_to admin_categories_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
                      <%= icon('fa-solid', 'list', class: 'mr-2') %><span class="hidden md:inline-block">
                         Categories</span>
-                    <% end %>
-                  </li>
-
-                   <li>
-                    <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
-                     <%= icon('fa-solid', 'clipboard-list', class: 'mr-2') %><span class="hidden md:inline-block">
-                        Stocks</span>
                     <% end %>
                   </li>
 
