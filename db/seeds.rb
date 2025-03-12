@@ -12,11 +12,15 @@
 
 # Admin.create(email: "admin@example.com", password: "password")
 
-# (1..10).each do |i|
+# (1..20).each do |i|
 # Category.create!(name: "Category #{i}", description: "test")
 # end
 
-# (1..10).each do |i|
+# (1..20).each do |i|
+# Product.create!(name: "Test #{i}", description: "test", price: 1000, category_id: 1)
+# end
+
+# (1..20).each do |i|
 # Order.create!(customer_email: "test#{i}@example.com", total: 1000, address: "123 RoR Road")
 # end
 

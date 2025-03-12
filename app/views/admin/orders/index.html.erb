@@ -52,14 +52,13 @@
 
       </tbody>
     </table>
-    <%== pagy_nav(@not_fulfilled_pagy) if @not_fulfilled_pagy.pages > 1 %> 
 
    <%# <% else %> 
     <%# <p class="text-center my-10">No Orders found.</p> %>
   </div>
  <%# <% end %> 
 </div>
-
+<%== pagy_nav(@not_fulfilled_pagy) if @not_fulfilled_pagy.pages > 1 %> 
 
 <p class="font-bold py-2">Fulfilled Orders</p>
 <div id="admin_orders" class="min-w-full divide-y divide-gray-200 space-y-5">
@@ -103,13 +102,12 @@
       </tbody>
     </table>
 
-    <%== pagy_nav(@fulfilled_pagy) if @fulfilled_pagy.pages > 1 %> 
-
    <%# <% else %> 
     <%# <p class="text-center my-10">No Orders found.</p> %>
   </div>
  <%# <% end %> 
 </div>
+<%== pagy_nav(@fulfilled_pagy) if @fulfilled_pagy.pages > 1 %> 
 
 <p class="font-bold py-2">All Orders</p>
 <div id="admin_orders" class="min-w-full divide-y divide-gray-200 space-y-5">
@@ -153,11 +151,9 @@
       </tbody>
     </table>
 
-    <%== pagy_nav(@admin_pagy) if @admin_pagy.pages > 1 %> 
-
    <%# <% else %> 
     <%# <p class="text-center my-10">No Orders found.</p> %>
   </div>
  <%# <% end %> 
 </div>
-
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %> 

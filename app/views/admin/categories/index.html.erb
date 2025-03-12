@@ -63,6 +63,7 @@
                   </table>    
                </div>
           </div>
+           <%== pagy_nav(@pagy) if @pagy.pages > 1 %> 
      <% else %>
       <p class="text-center my-10">No categories found.</p>
     <% end %>

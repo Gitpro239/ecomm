@@ -3,8 +3,8 @@ class Admin::OrdersController < AdminController
 
   # GET /admin/orders or /admin/orders.json
   def index
-    @admin_pagy, @admin_orders = pagy(Order.all, page_param: :page_fulfilled)
-    @not_fulfilled_pagy, @not_fulfilled_orders = pagy(Order.where(fulfilled: false).order(created_at: :asc), page_param: :page_fulfilled)
+    @pagy, @admin_orders = pagy(Order.all, page_param: :page_admin)
+    @not_fulfilled_pagy, @not_fulfilled_orders = pagy(Order.where(fulfilled: false).order(created_at: :asc), page_param: :page_not_fulfilled)
     @fulfilled_pagy, @fulfilled_orders = pagy(Order.where(fulfilled: true).order(created_at: :asc), page_param: :page_fulfilled)
   end
 

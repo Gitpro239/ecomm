@@ -19,7 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
 development:
   <<: *default
   database: ecomm_development
@@ -81,6 +80,9 @@ test:
 production:
   primary: &primary_production
     <<: *default
+
+    url: <%= ENV["DATABASE_URL"] %> # render
+
     database: ecomm_production
     username: ecomm
     password: <%= ENV["ECOMM_DATABASE_PASSWORD"] %>
