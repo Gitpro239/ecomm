@@ -12,8 +12,6 @@
 
 # Admin.create(email: "admin@example.com", password: "password")
 
-
-
 # (1..20).each do |i|
 # Category.create!(name: "Category #{i}", description: "test")
 # end
