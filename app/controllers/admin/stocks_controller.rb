@@ -68,7 +68,6 @@ class Admin::StocksController < AdminController
       @admin_stock = Stock.find(params.expect(:id))
     end
 
-
     # Only allow a list of trusted parameters through.
     def admin_stock_params
       # params.expect(stock: [ :size, :amount, :product_id ])
