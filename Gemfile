@@ -69,6 +69,6 @@ gem "tailwindcss-ruby", "~> 4.0"
 gem "devise", "~> 4.9"
 
 gem "font-awesome-sass", "~> 6.5.1"
-gem "stripe", "~> 13.5"
+gem "stripe", "~> 15.1"
 
 gem "pagy", "~> 9.3"
